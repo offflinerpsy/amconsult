@@ -142,7 +142,7 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
       whileHover={!isFlipped ? { rotateY: -12 } : { rotateY: -168 }}
     >
       {/* ЛИЦЕВАЯ СТОРОНА (ПРАВАЯ СТРАНИЦА ПРИ ПЕРЕЛИСТЫВАНИИ) */}
-      <div className={`absolute inset-0 backface-hidden rounded-r-xl xs:rounded-r-xl sm:rounded-r-2xl shadow-2xl flex flex-col border-l border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-2 xs:border-r-3 sm:border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
+      <div className={`absolute inset-0 backface-hidden rounded-r-xl xs:rounded-r-xl sm:rounded-r-2xl shadow-2xl flex flex-col border-l border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-2 sm:border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
         {isCover ? (
           <div className="h-full w-full p-4 xs:p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-white relative overflow-hidden">
              <div className="absolute inset-0 opacity-25 bg-[url('https://www.transparenttextures.com/patterns/leather.png')]" />
@@ -233,9 +233,9 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
         <div className="h-full w-full flex flex-col justify-between items-center p-4 xs:p-6 sm:p-10 md:p-12 lg:p-16 relative">
           
           {/* Цитата сверху */}
-          <div className="text-center relative z-20 w-full mb-4">
-             <span className="text-primary/20 text-6xl font-serif absolute -top-10 left-0">“</span>
-             <p className="font-serif text-dark/90 text-2xl sm:text-3xl tracking-[0.15em] italic leading-tight font-bold">
+          <div className="text-center relative z-20 w-full mb-2 xs:mb-3 sm:mb-4">
+             <span className="text-primary/20 text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-serif absolute -top-4 xs:-top-6 sm:-top-8 md:-top-10 left-0">“</span>
+             <p className="font-serif text-dark/90 text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl tracking-[0.1em] xs:tracking-[0.12em] sm:tracking-[0.15em] italic leading-tight font-bold px-2 xs:px-0">
                {content.latin}
              </p>
              <div className="mt-2 xs:mt-3 sm:mt-4 flex items-center justify-center gap-2 xs:gap-3 sm:gap-4">
