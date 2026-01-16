@@ -31,7 +31,7 @@ const InteractiveBook: React.FC = () => {
       est: 'EST. 2010',
       location: 'Санкт-Петербург',
       latin: 'IUSTITIA EST CONSTANS ET PERPETUA VOLUNTAS',
-      portrait: 'https://images.unsplash.com/photo-1595350320608-250392113271?q=80&w=600&auto=format&fit=crop', // Юстиниан
+      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Meister_von_San_Vitale_in_Ravenna_003.jpg/440px-Meister_von_San_Vitale_in_Ravenna_003.jpg',
       author: 'Юстиниан I'
     },
     {
@@ -39,7 +39,7 @@ const InteractiveBook: React.FC = () => {
       icon: 'phone_in_talk',
       desc: 'Первичный анализ ситуации. Честный прогноз исхода дела и проектирование фундамента будущей защиты.',
       btn: 'ЗАПИСАТЬСЯ',
-      portrait: 'https://images.unsplash.com/photo-1555660232-f3f21e176b5d?q=80&w=600&auto=format&fit=crop', // Цицерон
+      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cicero_-_Musei_Capitolini.JPG/440px-Cicero_-_Musei_Capitolini.JPG',
       latin: 'SALUS POPULI SUPREMA LEX EST',
       author: 'Цицерон'
     },
@@ -48,7 +48,7 @@ const InteractiveBook: React.FC = () => {
       icon: 'verified',
       desc: 'Анализ скрытых рисков в контрактах. Мы строим безопасную архитектуру вашего предприятия.',
       btn: 'B2B ПРИОРИТЕТ',
-      portrait: 'https://images.unsplash.com/photo-1549488347-1993478d5945?q=80&w=600&auto=format&fit=crop', // Гай
+      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sanzio_01_Plato_Aristotle.jpg/440px-Sanzio_01_Plato_Aristotle.jpg',
       latin: 'PACTA SUNT SERVANDA',
       author: 'Гай'
     },
