@@ -67,7 +67,7 @@ const InteractiveBook: React.FC = () => {
         <div className="relative w-[280px] h-[420px] xs:w-[300px] xs:h-[450px] sm:w-[380px] sm:h-[540px] md:w-[480px] md:h-[650px] preserve-3d">
         
         {/* Последняя статичная страница (Правая часть разворота) */}
-        <div className="absolute inset-0 bg-[#fdfaf2] rounded-r-xl xs:rounded-r-xl sm:rounded-r-2xl shadow-inner border-l-4 xs:border-l-6 sm:border-l-8 border-gray-200 overflow-hidden">
+        <div className="absolute inset-0 bg-[#fdfaf2] rounded-r-xl sm:rounded-r-2xl shadow-inner border-l-4 xs:border-l-6 sm:border-l-8 border-gray-200 overflow-hidden">
            <div className="absolute inset-0 opacity-15 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/old-map.png')]" />
            <div className="h-full p-4 xs:p-6 sm:p-10 md:p-14 flex flex-col justify-center items-center text-center relative z-10">
               <div className="text-primary/40 mb-4 xs:mb-6 sm:mb-8 md:mb-10">
@@ -142,7 +142,7 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
       whileHover={!isFlipped ? { rotateY: -12 } : { rotateY: -168 }}
     >
       {/* ЛИЦЕВАЯ СТОРОНА (ПРАВАЯ СТРАНИЦА ПРИ ПЕРЕЛИСТЫВАНИИ) */}
-      <div className={`absolute inset-0 backface-hidden rounded-r-xl xs:rounded-r-xl sm:rounded-r-2xl shadow-2xl flex flex-col border-l border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-2 sm:border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
+      <div className={`absolute inset-0 backface-hidden rounded-r-xl sm:rounded-r-2xl shadow-2xl flex flex-col border-l border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-2 sm:border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
         {isCover ? (
           <div className="h-full w-full p-4 xs:p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-white relative overflow-hidden">
              <div className="absolute inset-0 opacity-25 bg-[url('https://www.transparenttextures.com/patterns/leather.png')]" />
@@ -204,7 +204,7 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
                 {content.location}
               </div>
 
-              <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-[#ec9213]/30 to-transparent rounded-br-xl xs:rounded-br-xl sm:rounded-br-2xl" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-[#ec9213]/30 to-transparent rounded-br-xl sm:rounded-br-2xl" />
           </div>
         ) : (
           <div className="h-full p-4 xs:p-6 sm:p-10 md:p-14 flex flex-col justify-center items-center text-center relative overflow-hidden">
@@ -218,14 +218,14 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
              <button className="relative z-10 border-2 border-primary/30 text-dark px-4 xs:px-6 sm:px-8 md:px-10 py-2 xs:py-3 sm:py-4 md:py-5 font-black uppercase text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.3em] xs:tracking-[0.35em] sm:tracking-[0.4em] hover:bg-primary transition-all duration-700">
                {content.btn}
              </button>
-             <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-black/5 to-transparent rounded-br-xl xs:rounded-br-xl sm:rounded-br-2xl" />
+             <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-black/5 to-transparent rounded-br-xl sm:rounded-br-2xl" />
           </div>
         )}
       </div>
 
       {/* ОБРАТНАЯ СТОРОНА (ЛЕВАЯ СТРАНИЦА РАЗВОРОТА) */}
       <div 
-        className="absolute inset-0 backface-hidden rounded-l-xl xs:rounded-l-xl sm:rounded-l-2xl bg-[#f4f0e6] shadow-2xl border-r-4 xs:border-r-6 sm:border-r-8 border-gray-300/30 overflow-hidden"
+        className="absolute inset-0 backface-hidden rounded-l-xl sm:rounded-l-2xl bg-[#f4f0e6] shadow-2xl border-r-4 xs:border-r-6 sm:border-r-8 border-gray-300/30 overflow-hidden"
         style={{ transform: 'rotateY(180deg)' }}
       >
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]" />
