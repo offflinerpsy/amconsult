@@ -277,12 +277,15 @@ const DesktopBook: React.FC = () => {
   };
 
   // ИСПРАВЛЕННАЯ ЛОГИКА Z-INDEX:
-  // Перевёрнутые страницы уходят НАЗАД (меньший z-index)
-  // Не перевёрнутые остаются ВПЕРЕДИ (базовый z-index)
+  // Не перевёрнутые: обложка сверху (30), далее 20, 10
+  // Перевёрнутые: последняя перевёрнутая должна быть сверху для возврата
+  // index=2 перевёрнута -> z=8 (самая верхняя слева)
+  // index=1 перевёрнута -> z=7
+  // index=0 перевёрнута -> z=6
   const getZIndex = (index: number, isFlipped: boolean, baseZ: number) => {
     if (isFlipped) {
-      // Перевёрнутые страницы: обложка (0) -> z=5, страница 1 -> z=4, страница 2 -> z=3
-      return 5 - index;
+      // Перевёрнутые: чем больше index, тем выше z (чтобы последняя была кликабельна)
+      return 6 + index;
     }
     return baseZ;
   };
@@ -303,13 +306,13 @@ const DesktopBook: React.FC = () => {
             <div className="text-primary/40 mb-10">
               <span className="material-symbols-outlined text-7xl sm:text-9xl">{pages[3].icon}</span>
             </div>
-            <h3 className="font-serif text-3xl sm:text-5xl font-bold mb-8 text-dark tracking-wider uppercase leading-tight">{pages[3].title}</h3>
-            <div className="w-20 h-px bg-primary/40 mb-8" />
-            <p className="text-gray-900 text-xl sm:text-2xl leading-relaxed mb-12 font-serif italic max-w-sm">{pages[3].desc}</p>
-            <button className="bg-dark text-white border-2 border-primary/20 px-10 py-5 rounded-none font-bold uppercase text-[11px] tracking-[0.4em] hover:bg-primary hover:text-dark transition-all duration-500 shadow-2xl active:scale-95">
+            <h3 className="font-serif text-3xl sm:text-5xl font-bold mb-6 text-dark tracking-wider uppercase leading-tight">{pages[3].title}</h3>
+            <div className="w-20 h-px bg-primary/40 mb-6" />
+            <p className="text-gray-900 text-xl sm:text-2xl leading-relaxed mb-8 font-serif italic max-w-sm">{pages[3].desc}</p>
+            <button className="bg-dark text-white border-2 border-primary/20 px-10 py-5 rounded-none font-bold uppercase text-[11px] tracking-[0.4em] hover:bg-primary hover:text-dark transition-all duration-500 shadow-2xl active:scale-95 relative z-20">
               {pages[3].btn}
             </button>
-            <p className="absolute bottom-10 text-[12px] text-primary/60 font-serif tracking-[0.3em] font-bold">{pages[3].latin}</p>
+            <p className="mt-8 text-[12px] text-primary/60 font-serif tracking-[0.3em] font-bold">{pages[3].latin}</p>
           </div>
         </div>
 
@@ -362,10 +365,13 @@ const DesktopPage: React.FC<DesktopPageProps> = ({ index, isFlipped, onToggle, c
       style={{ 
         zIndex,
         transformStyle: 'preserve-3d',
-        transformOrigin: 'left center'
+        transformOrigin: 'left center',
+        // Когда страница полностью перевёрнута, отключаем pointer-events
+        // чтобы можно было кликнуть на страницу под ней для возврата
+        pointerEvents: 'auto'
       }}
       animate={{ 
-        rotateY: isFlipped ? -180 : 0  // Исправлено: -180 вместо -178
+        rotateY: isFlipped ? -180 : 0
       }}
       transition={{ 
         duration: 0.8, 
