@@ -10,9 +10,9 @@ const LogoAM: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
 
   return (
     <svg 
-      viewBox="0 0 595.28 841.89" 
+      viewBox="180 260 240 160" 
       xmlns="http://www.w3.org/2000/svg"
-      className="h-16 md:h-24 w-auto transition-all duration-300" 
+      className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto transition-all duration-300" 
     >
       <g>
         <path fill={color} d="M234.05,394.323c-1.413,1.044-2.962,1.55-4.737,1.55c-5.015,0-7.299-4.048-7.299-7.809

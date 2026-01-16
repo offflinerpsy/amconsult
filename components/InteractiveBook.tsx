@@ -152,8 +152,8 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
               
               <div className="flex flex-col items-center relative z-10 mt-8">
                 {/* SVG LOGO REPLACING GAVEL */}
-                <div className="w-40 h-52 sm:w-48 sm:h-64 mb-8 flex items-center justify-center opacity-90 drop-shadow-[0_0_15px_rgba(236,146,19,0.5)]">
-                    <svg viewBox="0 0 595.28 841.89" xmlns="http://www.w3.org/2000/svg" className="h-full w-auto fill-[#ec9213]">
+                <div className="w-56 h-32 sm:w-72 sm:h-40 mb-8 flex items-center justify-center opacity-90 drop-shadow-[0_0_15px_rgba(236,146,19,0.5)]">
+                    <svg viewBox="180 260 240 160" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto fill-[#ec9213]">
                         <g>
                             <path d="M234.05,394.323c-1.413,1.044-2.962,1.55-4.737,1.55c-5.015,0-7.299-4.048-7.299-7.809
                                 c0-3.619,1.992-7.274,6.444-7.274c1.629,0,3.522,0.545,5.474,1.576l0.504,0.268v-2.585l-0.276-0.054
