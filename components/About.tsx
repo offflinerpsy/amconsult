@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   // Пробуем загрузить founder.jpg по умолчанию
-  const [imgSrc, setImgSrc] = useState<string>(`founder.jpg?v=${Date.now()}`);
+  const [imgSrc, setImgSrc] = useState<string>(`${import.meta.env.BASE_URL}founder.jpg?v=${Date.now()}`);
   const [imgError, setImgError] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -23,7 +23,7 @@ const About: React.FC = () => {
   // Функция для повторной попытки загрузки по имени файла
   const handleRetryAuto = () => {
     setImgError(false);
-    setImgSrc(`founder.jpg?v=${Date.now()}`);
+    setImgSrc(`${import.meta.env.BASE_URL}founder.jpg?v=${Date.now()}`);
   };
 
   return (
