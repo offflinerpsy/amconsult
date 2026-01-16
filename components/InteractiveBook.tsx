@@ -31,7 +31,7 @@ const InteractiveBook: React.FC = () => {
       est: 'EST. 2010',
       location: 'Санкт-Петербург',
       latin: 'IUSTITIA EST CONSTANS ET PERPETUA VOLUNTAS',
-      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Meister_von_San_Vitale_in_Ravenna_003.jpg/440px-Meister_von_San_Vitale_in_Ravenna_003.jpg',
+      portrait: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=500&fit=crop',
       author: 'Юстиниан I'
     },
     {
@@ -39,7 +39,7 @@ const InteractiveBook: React.FC = () => {
       icon: 'phone_in_talk',
       desc: 'Первичный анализ ситуации. Честный прогноз исхода дела и проектирование фундамента будущей защиты.',
       btn: 'ЗАПИСАТЬСЯ',
-      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cicero_-_Musei_Capitolini.JPG/440px-Cicero_-_Musei_Capitolini.JPG',
+      portrait: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400&h=500&fit=crop',
       latin: 'SALUS POPULI SUPREMA LEX EST',
       author: 'Цицерон'
     },
@@ -48,7 +48,7 @@ const InteractiveBook: React.FC = () => {
       icon: 'verified',
       desc: 'Анализ скрытых рисков в контрактах. Мы строим безопасную архитектуру вашего предприятия.',
       btn: 'B2B ПРИОРИТЕТ',
-      portrait: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sanzio_01_Plato_Aristotle.jpg/440px-Sanzio_01_Plato_Aristotle.jpg',
+      portrait: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=500&fit=crop',
       latin: 'PACTA SUNT SERVANDA',
       author: 'Гай'
     },
@@ -242,20 +242,22 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
              </div>
           </div>
 
-          {/* Гравюра в центре - ГАРАНТИРОВАННО РАБОЧИЙ МЕТОД: БЕЛЫЙ ФОН + MULTIPLY */}
-          <div className="relative w-full flex-1 max-h-[320px] mb-6 mt-4 rounded-2xl bg-white overflow-hidden">
-            {/* Изображение с режимом наложения Multiply */}
+          {/* Гравюра в центре */}
+          <div className="relative w-full flex-1 max-h-[280px] mb-4 mt-2 rounded-lg overflow-hidden bg-[#e8e4da] border border-primary/10">
+            {/* Изображение */}
             <img 
               src={content.portrait} 
               alt="Engraving" 
-              className="w-full h-full object-cover mix-blend-multiply"
-              style={{ filter: 'grayscale(100%) contrast(1.4) brightness(1.1) sepia(0.2)' }}
+              className="w-full h-full object-cover opacity-90"
+              style={{ filter: 'grayscale(80%) sepia(30%) contrast(1.1)' }}
+              loading="eager"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
             />
-            {/* Текстура */}
-            <div className="absolute inset-0 opacity-40 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')] z-20" />
-            
-            {/* Дополнительный слой для сглаживания краев если картинка не идеальна */}
-            <div className="absolute inset-0 shadow-[inset_0_0_20px_20px_#f4f0e6] pointer-events-none z-10" />
+            {/* Виньетка по краям */}
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_15px_rgba(244,240,230,0.9)] pointer-events-none" />
           </div>
 
           {/* Декор снизу */}
