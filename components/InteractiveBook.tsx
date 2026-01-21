@@ -62,24 +62,23 @@ const InteractiveBook: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center py-4 md:py-10 select-none overflow-hidden">
-      <div className="perspective-[3000px]">
-        <div className="relative w-[280px] h-[420px] xs:w-[300px] xs:h-[450px] sm:w-[380px] sm:h-[540px] md:w-[480px] md:h-[650px] preserve-3d">
+    <div className="relative w-full flex flex-col items-center justify-center py-4 md:py-10 perspective-[3000px] select-none scale-[0.9] sm:scale-100 transition-transform">
+      <div className="relative w-[320px] h-[480px] sm:w-[420px] sm:h-[580px] md:w-[480px] md:h-[650px] preserve-3d">
         
         {/* Последняя статичная страница (Правая часть разворота) */}
-        <div className="absolute inset-0 bg-[#fdfaf2] rounded-r-xl sm:rounded-r-2xl shadow-inner border-l-4 xs:border-l-6 sm:border-l-8 border-gray-200 overflow-hidden">
+        <div className="absolute inset-0 bg-[#fdfaf2] rounded-r-2xl shadow-inner border-l-8 border-gray-200 overflow-hidden">
            <div className="absolute inset-0 opacity-15 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/old-map.png')]" />
-           <div className="h-full p-4 xs:p-6 sm:p-10 md:p-14 flex flex-col justify-center items-center text-center relative z-10">
-              <div className="text-primary/40 mb-4 xs:mb-6 sm:mb-8 md:mb-10">
-                <span className="material-symbols-outlined text-4xl xs:text-5xl sm:text-7xl md:text-9xl">{pages[3].icon}</span>
+           <div className="h-full p-10 sm:p-14 flex flex-col justify-center items-center text-center relative z-10">
+              <div className="text-primary/40 mb-10">
+                <span className="material-symbols-outlined text-7xl sm:text-9xl">{pages[3].icon}</span>
               </div>
-              <h3 className="font-serif text-lg xs:text-xl sm:text-3xl md:text-5xl font-bold mb-4 xs:mb-5 sm:mb-6 md:mb-8 text-dark tracking-wider uppercase leading-tight">{pages[3].title}</h3>
-              <div className="w-12 xs:w-16 sm:w-20 h-px bg-primary/40 mb-4 xs:mb-5 sm:mb-6 md:mb-8" />
-              <p className="text-gray-900 text-xs xs:text-sm sm:text-xl md:text-2xl leading-relaxed mb-6 xs:mb-8 sm:mb-10 md:mb-12 font-serif italic max-w-sm">{pages[3].desc}</p>
-              <button className="bg-dark text-primary border-2 border-primary/20 px-4 xs:px-6 sm:px-8 md:px-10 py-2 xs:py-3 sm:py-4 md:py-5 rounded-none font-bold uppercase text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.3em] xs:tracking-[0.35em] sm:tracking-[0.4em] hover:bg-primary hover:text-dark transition-all duration-700 shadow-2xl active:scale-95">
+              <h3 className="font-serif text-3xl sm:text-5xl font-bold mb-8 text-dark tracking-wider uppercase leading-tight">{pages[3].title}</h3>
+              <div className="w-20 h-px bg-primary/40 mb-8" />
+              <p className="text-gray-900 text-xl sm:text-2xl leading-relaxed mb-12 font-serif italic max-w-sm">{pages[3].desc}</p>
+              <button className="bg-dark text-primary border-2 border-primary/20 px-10 py-5 rounded-none font-bold uppercase text-[11px] tracking-[0.4em] hover:bg-primary hover:text-dark transition-all duration-700 shadow-2xl active:scale-95">
                 {pages[3].btn}
               </button>
-              <p className="absolute bottom-4 xs:bottom-6 sm:bottom-8 md:bottom-10 text-[8px] xs:text-[9px] sm:text-[10px] md:text-[12px] text-primary/60 font-serif tracking-[0.2em] xs:tracking-[0.25em] sm:tracking-[0.3em] font-bold">{pages[3].latin}</p>
+              <p className="absolute bottom-10 text-[12px] text-primary/60 font-serif tracking-[0.3em] font-bold">{pages[3].latin}</p>
            </div>
         </div>
 
@@ -107,12 +106,10 @@ const InteractiveBook: React.FC = () => {
           isCover={true}
         />
       </div>
-      </div>
 
-      <div className="mt-6 xs:mt-8 sm:mt-10 md:mt-14 flex items-center gap-2 xs:gap-3 sm:gap-4 md:gap-5 text-primary/50 text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.3em] xs:tracking-[0.4em] sm:tracking-[0.5em] font-black italic">
-        <span className="material-symbols-outlined text-sm xs:text-base sm:text-lg md:text-xl animate-pulse">auto_stories</span>
-        <span className="hidden xs:inline">Интерактивное издание · Листайте в обе стороны</span>
-        <span className="xs:hidden">Листайте</span>
+      <div className="mt-14 flex items-center gap-5 text-primary/50 text-[11px] uppercase tracking-[0.5em] font-black italic">
+        <span className="material-symbols-outlined text-xl animate-pulse">auto_stories</span>
+        <span>Интерактивное издание · Листайте в обе стороны</span>
       </div>
     </div>
   );
@@ -142,20 +139,20 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
       whileHover={!isFlipped ? { rotateY: -12 } : { rotateY: -168 }}
     >
       {/* ЛИЦЕВАЯ СТОРОНА (ПРАВАЯ СТРАНИЦА ПРИ ПЕРЕЛИСТЫВАНИИ) */}
-      <div className={`absolute inset-0 backface-hidden rounded-r-xl sm:rounded-r-2xl shadow-2xl flex flex-col border-l border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-2 sm:border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
+      <div className={`absolute inset-0 backface-hidden rounded-r-2xl shadow-2xl flex flex-col border-l-2 border-gray-200/20 ${isCover ? 'bg-[#2d2418] border-r-4 border-[#ec9213]/40' : 'bg-[#fdfaf2]'}`}>
         {isCover ? (
-          <div className="h-full w-full p-4 xs:p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-white relative overflow-hidden">
+          <div className="h-full w-full p-10 flex flex-col justify-between items-center text-white relative overflow-hidden">
              <div className="absolute inset-0 opacity-25 bg-[url('https://www.transparenttextures.com/patterns/leather.png')]" />
              
              <div className="w-full flex justify-between items-center opacity-40 relative z-10">
                 <div className="h-px bg-[#ec9213] flex-1" />
-                <span className="px-2 xs:px-3 sm:px-4 md:px-5 text-[7px] xs:text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.4em] xs:tracking-[0.5em] sm:tracking-[0.6em] font-black">{content.est}</span>
+                <span className="px-5 text-[11px] uppercase tracking-[0.6em] font-black">{content.est}</span>
                 <div className="h-px bg-[#ec9213] flex-1" />
               </div>
               
-              <div className="flex flex-col items-center relative z-10 mt-2 xs:mt-4 sm:mt-6 md:mt-8">
+              <div className="flex flex-col items-center relative z-10 mt-8">
                 {/* SVG LOGO - AM MONOGRAM ONLY */}
-                <div className="w-32 h-24 xs:w-40 xs:h-28 sm:w-56 sm:h-40 md:w-72 md:h-52 mb-3 xs:mb-4 sm:mb-6 md:mb-8 flex items-center justify-center opacity-90 drop-shadow-[0_0_10px_rgba(236,146,19,0.5)] xs:drop-shadow-[0_0_12px_rgba(236,146,19,0.5)] sm:drop-shadow-[0_0_15px_rgba(236,146,19,0.5)]">
+                <div className="w-56 h-40 sm:w-72 sm:h-52 mb-8 flex items-center justify-center opacity-90 drop-shadow-[0_0_15px_rgba(236,146,19,0.5)]">
                     <svg viewBox="220 290 160 90" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto fill-[#ec9213]">
                         <g>
                           <path d="M329.586,296.519c0.186-0.237,0.284-0.532,0.207-0.971c-0.077-0.406-0.256-0.478-0.655-0.555
@@ -195,58 +192,58 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
                         </g>
                     </svg>
                 </div>
-                <h1 className="font-serif text-xl xs:text-2xl sm:text-4xl md:text-6xl font-bold tracking-[0.2em] xs:tracking-[0.25em] sm:tracking-[0.3em] mb-3 xs:mb-4 sm:mb-5 md:mb-6 text-center leading-tight drop-shadow-2xl">{content.title}</h1>
-                <div className="w-10 xs:w-12 sm:w-14 md:w-16 h-px bg-primary/60 mb-3 xs:mb-4 sm:mb-5 md:mb-6" />
-                <p className="text-[#ec9213] text-[10px] xs:text-[11px] sm:text-[12px] md:text-[14px] uppercase tracking-[0.15em] xs:tracking-[0.18em] sm:tracking-[0.2em] font-bold">{content.subtitle}</p>
+                <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-[0.3em] mb-6 text-center leading-tight drop-shadow-2xl">{content.title}</h1>
+                <div className="w-16 h-px bg-primary/60 mb-6" />
+                <p className="text-[#ec9213] text-[14px] uppercase tracking-[0.2em] font-bold">{content.subtitle}</p>
               </div>
 
-              <div className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.3em] xs:tracking-[0.4em] sm:tracking-[0.5em] text-white/50 font-black relative z-10">
+              <div className="text-[11px] uppercase tracking-[0.5em] text-white/50 font-black relative z-10">
                 {content.location}
               </div>
 
-              <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-[#ec9213]/30 to-transparent rounded-br-xl sm:rounded-br-2xl" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#ec9213]/30 to-transparent rounded-br-2xl" />
           </div>
         ) : (
-          <div className="h-full p-4 xs:p-6 sm:p-10 md:p-14 flex flex-col justify-center items-center text-center relative overflow-hidden">
+          <div className="h-full p-10 sm:p-14 flex flex-col justify-center items-center text-center relative overflow-hidden">
              <div className="absolute inset-0 opacity-15 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/handmade-paper.png')]" />
-             <div className="text-primary/40 mb-4 xs:mb-6 sm:mb-8 md:mb-10 relative z-10">
-               <span className="material-symbols-outlined text-4xl xs:text-5xl sm:text-7xl md:text-9xl">{content.icon}</span>
+             <div className="text-primary/40 mb-10 relative z-10">
+               <span className="material-symbols-outlined text-7xl sm:text-9xl">{content.icon}</span>
              </div>
-             <h3 className="font-serif text-lg xs:text-xl sm:text-3xl md:text-5xl font-bold mb-4 xs:mb-5 sm:mb-6 md:mb-8 text-dark tracking-wide uppercase leading-tight relative z-10">{content.title}</h3>
-             <div className="w-12 xs:w-16 sm:w-20 h-px bg-primary/40 mb-4 xs:mb-5 sm:mb-6 md:mb-8 relative z-10" />
-             <p className="text-gray-900 text-xs xs:text-sm sm:text-xl md:text-2xl leading-relaxed mb-6 xs:mb-8 sm:mb-10 md:mb-12 font-serif italic relative z-10 max-w-sm">{content.desc}</p>
-             <button className="relative z-10 border-2 border-primary/30 text-dark px-4 xs:px-6 sm:px-8 md:px-10 py-2 xs:py-3 sm:py-4 md:py-5 font-black uppercase text-[8px] xs:text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.3em] xs:tracking-[0.35em] sm:tracking-[0.4em] hover:bg-primary transition-all duration-700">
+             <h3 className="font-serif text-3xl sm:text-5xl font-bold mb-8 text-dark tracking-wide uppercase leading-tight relative z-10">{content.title}</h3>
+             <div className="w-20 h-px bg-primary/40 mb-8 relative z-10" />
+             <p className="text-gray-900 text-xl sm:text-2xl leading-relaxed mb-12 font-serif italic relative z-10 max-w-sm">{content.desc}</p>
+             <button className="relative z-10 border-2 border-primary/30 text-dark px-10 py-5 font-black uppercase text-[11px] tracking-[0.4em] hover:bg-primary transition-all duration-700">
                {content.btn}
              </button>
-             <div className="absolute bottom-0 right-0 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-tl from-black/5 to-transparent rounded-br-xl sm:rounded-br-2xl" />
+             <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-black/5 to-transparent rounded-br-2xl" />
           </div>
         )}
       </div>
 
       {/* ОБРАТНАЯ СТОРОНА (ЛЕВАЯ СТРАНИЦА РАЗВОРОТА) */}
       <div 
-        className="absolute inset-0 backface-hidden rounded-l-xl sm:rounded-l-2xl bg-[#f4f0e6] shadow-2xl border-r-4 xs:border-r-6 sm:border-r-8 border-gray-300/30 overflow-hidden"
+        className="absolute inset-0 backface-hidden rounded-l-2xl bg-[#f4f0e6] shadow-2xl border-r-8 border-gray-300/30 overflow-hidden"
         style={{ transform: 'rotateY(180deg)' }}
       >
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]" />
         
-        <div className="h-full w-full flex flex-col justify-between items-center p-4 xs:p-6 sm:p-10 md:p-12 lg:p-16 relative">
+        <div className="h-full w-full flex flex-col justify-between items-center p-12 sm:p-16 relative">
           
           {/* Цитата сверху */}
-          <div className="text-center relative z-20 w-full mb-2 xs:mb-3 sm:mb-4">
-             <span className="text-primary/20 text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-serif absolute -top-4 xs:-top-6 sm:-top-8 md:-top-10 left-0">“</span>
-             <p className="font-serif text-dark/90 text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl tracking-[0.1em] xs:tracking-[0.12em] sm:tracking-[0.15em] italic leading-tight font-bold px-2 xs:px-0">
+          <div className="text-center relative z-20 w-full mb-4">
+             <span className="text-primary/20 text-6xl font-serif absolute -top-10 left-0">“</span>
+             <p className="font-serif text-dark/90 text-2xl sm:text-3xl tracking-[0.15em] italic leading-tight font-bold">
                {content.latin}
              </p>
-             <div className="mt-2 xs:mt-3 sm:mt-4 flex items-center justify-center gap-2 xs:gap-3 sm:gap-4">
-                <div className="h-px bg-primary/20 w-4 xs:w-6 sm:w-8" />
-                <span className="text-[7px] xs:text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.3em] xs:tracking-[0.35em] sm:tracking-[0.4em] text-primary/60 font-black">{content.author}</span>
-                <div className="h-px bg-primary/20 w-4 xs:w-6 sm:w-8" />
+             <div className="mt-4 flex items-center justify-center gap-4">
+                <div className="h-px bg-primary/20 w-8" />
+                <span className="text-[10px] uppercase tracking-[0.4em] text-primary/60 font-black">{content.author}</span>
+                <div className="h-px bg-primary/20 w-8" />
              </div>
           </div>
 
           {/* Гравюра в центре */}
-          <div className="relative w-full flex-1 max-h-[180px] xs:max-h-[220px] sm:max-h-[260px] md:max-h-[280px] mb-2 xs:mb-3 sm:mb-4 mt-1 xs:mt-2 rounded-md xs:rounded-lg overflow-hidden bg-[#e8e4da] border border-primary/10">
+          <div className="relative w-full flex-1 max-h-[280px] mb-4 mt-2 rounded-lg overflow-hidden bg-[#e8e4da] border border-primary/10">
             {/* Изображение */}
             <img 
               src={content.portrait} 
@@ -260,19 +257,19 @@ const Page: React.FC<PageProps> = ({ index, isFlipped, onToggle, content, zIndex
               }}
             />
             {/* Виньетка по краям */}
-            <div className="absolute inset-0 shadow-[inset_0_0_20px_8px_rgba(244,240,230,0.9)] xs:shadow-[inset_0_0_30px_12px_rgba(244,240,230,0.9)] sm:shadow-[inset_0_0_40px_15px_rgba(244,240,230,0.9)] pointer-events-none" />
+            <div className="absolute inset-0 shadow-[inset_0_0_40px_15px_rgba(244,240,230,0.9)] pointer-events-none" />
           </div>
 
           {/* Декор снизу */}
-          <div className="flex justify-center gap-2 xs:gap-2.5 sm:gap-3 opacity-30">
-            <span className="material-symbols-outlined text-primary text-sm xs:text-base sm:text-lg md:text-xl">stat_3</span>
-            <span className="material-symbols-outlined text-primary text-sm xs:text-base sm:text-lg md:text-xl">stat_3</span>
-            <span className="material-symbols-outlined text-primary text-sm xs:text-base sm:text-lg md:text-xl">stat_3</span>
+          <div className="flex justify-center gap-3 opacity-30">
+            <span className="material-symbols-outlined text-primary text-xl">stat_3</span>
+            <span className="material-symbols-outlined text-primary text-xl">stat_3</span>
+            <span className="material-symbols-outlined text-primary text-xl">stat_3</span>
           </div>
         </div>
 
         {/* Тень в корешке книги */}
-        <div className="absolute inset-y-0 right-0 w-8 xs:w-10 sm:w-12 md:w-16 bg-gradient-to-l from-black/25 via-black/5 to-transparent z-40" />
+        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black/25 via-black/5 to-transparent z-40" />
       </div>
     </motion.div>
   );
