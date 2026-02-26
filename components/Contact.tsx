@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 
 const PHONE = '+79818062383';
 const PHONE_DISPLAY = '+7 981 806 2383';
-const EMAIL = 'info@alina-makeeva.ru';
-const TG_LINK = 'https://t.me/alina_makeeva'; // TODO: уточнить username TG
+const EMAIL = 'info@amconsultspb.ru';
+const TG_LINK = 'https://t.me/MakeevaAlina88';
 // Координаты офиса: ул. Матроса Железняка, 57, СПб
 const YANDEX_MAPS_LINK = 'https://yandex.ru/maps/?pt=30.312154,59.996165&z=16&l=map';
 

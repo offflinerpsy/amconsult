@@ -5,7 +5,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 const PHONE = '+79818062383';
 const PHONE_DISPLAY = '+7 981 806 2383';
-const TG_LINK = 'https://t.me/alina_makeeva'; // TODO: уточнить username TG
+const TG_LINK = 'https://t.me/MakeevaAlina88';
 
 const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
           {/* Основные CTA */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <button
-              onClick={() => scrollToSection('cta-section')}
+              onClick={() => scrollToSection('contacts')}
               className="w-full sm:w-auto px-10 py-5 bg-primary text-dark font-black uppercase tracking-[0.3em] text-[12px] md:text-[13px] rounded-none hover:shadow-2xl hover:shadow-primary/30 transition-all active:scale-95"
             >
               Консультация

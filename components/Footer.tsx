@@ -25,7 +25,9 @@ const Footer: React.FC = () => {
                 </g>
               </svg>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed font-light">
+            <p className="mt-2 text-white/80 text-[10px] font-bold uppercase tracking-[0.3em]" style={{fontFamily: "'Montserrat', 'Manrope', sans-serif"}}>Консалтинг</p>
+            <p className="text-white/40 text-[8px] uppercase tracking-[0.2em] mt-0.5" style={{fontFamily: "'Montserrat', 'Manrope', sans-serif"}}>Ваш успех — по праву</p>
+            <p className="text-gray-400 text-sm leading-relaxed font-light mt-6">
               Высокие стандарты юридических услуг. Мы защищаем то, что вам дорого, используя многолетний опыт и безупречное знание закона.
             </p>
           </div>
@@ -55,7 +57,7 @@ const Footer: React.FC = () => {
                 <li>Санкт-Петербург</li>
                 <li>ул. Матроса Железняка, 57</li>
                 <li><a href="tel:+79818062383" className="hover:text-primary transition-colors">+7 981 806 2383</a></li>
-                <li><a href="mailto:info@alina-makeeva.ru" className="hover:text-primary transition-colors">info@alina-makeeva.ru</a></li>
+                <li><a href="mailto:info@amconsultspb.ru" className="hover:text-primary transition-colors">info@amconsultspb.ru</a></li>
               </ul>
             </div>
           </div>
