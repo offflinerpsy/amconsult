@@ -124,7 +124,7 @@ const About: React.FC = () => {
           <div className="flex-1 text-left mt-16 lg:mt-0">
             <div className="flex items-center gap-4 mb-8">
               <span className="h-px w-12 bg-primary"></span>
-              <span className="text-[11px] font-black uppercase tracking-[0.5em] text-primary">Основатель кабинета</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.5em] text-primary">Основатель центра</span>
             </div>
             
             <h2 className="text-5xl md:text-7xl font-serif font-bold text-text-main mb-10 leading-tight">
@@ -133,14 +133,14 @@ const About: React.FC = () => {
             
             <div className="relative mb-12">
               <p className="text-xl md:text-2xl text-text-main font-serif italic leading-relaxed pl-10">
-                «Мы не просто решаем юридические задачи. Мы создаем правовой щит, который позволяет вашему бизнесу и семье чувствовать себя в полной безопасности.»
+                «Я и моя команда не просто решаем юридические задачи. Мы создаем правовой щит, который позволяет вашему бизнесу и семье чувствовать себя в полной безопасности.»
               </p>
               <span className="absolute left-0 top-0 text-primary opacity-20 text-6xl font-serif">“</span>
             </div>
 
             <div className="space-y-8 text-text-secondary leading-relaxed text-lg font-light max-w-2xl">
-              <p>Как ведущий юрист с многолетним стажем, я убеждена: в праве не бывает мелочей. Мой кабинет специализируется на защите сложных активов и разрешении нестандартных корпоративных споров.</p>
-              <p>Мы предлагаем уровень экспертизы, который обычно доступен только в крупных международных фирмах, сохраняя при этом персональную вовлеченность и абсолютную конфиденциальность семейного офиса.</p>
+              <p>Как ведущий юрист с многолетним стажем, я убеждена: в праве не бывает мелочей. Центр специализируется на защите сложных активов и разрешении нестандартных корпоративных споров.</p>
+              <p>Мы предлагаем высокий уровень экспертизы, сохраняя при этом персональную вовлеченность и абсолютную конфиденциальность.</p>
             </div>
 
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-8">
