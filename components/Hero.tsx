@@ -1,11 +1,120 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Phone, MessageCircle } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Phone, MessageCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PHONE = '+79818062383';
 const PHONE_DISPLAY = '+7 981 806 2383';
 const TG_LINK = 'https://t.me/MakeevaAlina88';
+
+const promos = [
+  {
+    title: 'Бесплатная консультация',
+    desc: 'Первичный анализ вашей ситуации. Честный прогноз исхода дела и стратегия будущей защиты — без скрытых платежей.',
+    icon: '→',
+  },
+  {
+    title: 'Аудит договора для бизнеса',
+    desc: 'Бесплатный экспертный разбор вашего договора. Выявим скрытые риски, «подводные камни» и слабые места.',
+    icon: '⚖',
+  },
+  {
+    title: 'Сопровождение сделок',
+    desc: 'Полная юридическая поддержка на всех этапах сделки — от проверки контрагента до подписания документов.',
+    icon: '✓',
+  },
+];
+
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -80 : 80, opacity: 0 }),
+};
+
+const PromosCarousel: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const next = useCallback(() => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % promos.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + promos.length) % promos.length);
+  }, []);
+
+  // Автопрокрутка каждые 5 секунд
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const promo = promos[current];
+
+  return (
+    <div className="flex flex-col gap-5">
+      {/* Заголовок */}
+      <div className="flex items-center gap-4">
+        <span className="h-px w-10 bg-primary"></span>
+        <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary">Специальные предложения</span>
+      </div>
+
+      {/* Карусель — квадратная карточка */}
+      <div className="relative bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden aspect-square">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 flex flex-col justify-center p-8 lg:p-10"
+          >
+            <span className="text-5xl lg:text-6xl mb-6 block">{promo.icon}</span>
+            <h3 className="font-bold text-2xl lg:text-3xl text-text-main tracking-tight mb-4 leading-tight">{promo.title}</h3>
+            <p className="text-text-secondary text-base lg:text-lg leading-relaxed font-light">
+              {promo.desc}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Навигация */}
+        <div className="absolute bottom-5 left-8 lg:left-10 right-8 lg:right-10 flex items-center justify-between">
+          <div className="flex gap-2">
+            {promos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                className={`h-1.5 rounded-full transition-all duration-500 ${
+                  i === current ? 'w-8 bg-primary' : 'w-3 bg-gray-200 hover:bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
+          <div className="flex gap-2">
+            <button onClick={prev} className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+              <ChevronLeft size={16} />
+            </button>
+            <button onClick={next} className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
+              <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Локация */}
+      <div className="bg-brand-red rounded-2xl p-8 lg:p-10 text-white">
+        <p className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-3">Локация</p>
+        <p className="font-serif text-2xl lg:text-3xl font-bold mb-2">Санкт-Петербург</p>
+        <p className="text-white/60 text-base lg:text-lg font-light">ул. Матроса Железняка, 57</p>
+      </div>
+    </div>
+  );
+};
 
 const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -21,7 +130,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative w-full bg-background-light pt-48 pb-16 md:pb-32 lg:pb-48 px-6 md:px-10 lg:px-40 overflow-hidden min-h-screen flex items-center">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16 items-stretch relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16 items-start relative z-10 w-full">
 
         {/* Text Content */}
         <motion.div
@@ -119,52 +228,14 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Акции блок вместо фото */}
+        {/* Акции — карусель + локация */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative order-1 lg:order-2 w-full flex flex-col"
+          className="relative order-1 lg:order-2 w-full"
         >
-          <div className="flex flex-col gap-5 h-full">
-            {/* Заголовок блока */}
-            <div className="flex items-center gap-4">
-              <span className="h-px w-10 bg-primary"></span>
-              <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary">Специальные предложения</span>
-            </div>
-
-            {/* Акции — 2 колонки, растянутые */}
-            <div className="grid grid-cols-2 gap-4 flex-1">
-              {/* Акция 1 */}
-              <div className="bg-white border border-gray-100 rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group flex flex-col justify-center">
-                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-4">
-                  <span className="text-primary font-serif font-bold text-lg">1</span>
-                </div>
-                <h3 className="font-bold text-lg lg:text-xl text-text-main tracking-tight mb-2 leading-tight">Бесплатная консультация</h3>
-                <p className="text-text-secondary text-sm lg:text-base leading-relaxed font-light">
-                  Первичный анализ ситуации и честный прогноз исхода дела.
-                </p>
-              </div>
-
-              {/* Акция 2 */}
-              <div className="bg-white border border-gray-100 rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group flex flex-col justify-center">
-                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-4">
-                  <span className="text-primary font-serif font-bold text-lg">2</span>
-                </div>
-                <h3 className="font-bold text-lg lg:text-xl text-text-main tracking-tight mb-2 leading-tight">Аудит договора для бизнеса</h3>
-                <p className="text-text-secondary text-sm lg:text-base leading-relaxed font-light">
-                  Бесплатный разбор шаблона. Выявим скрытые риски и «подводные камни».
-                </p>
-              </div>
-            </div>
-
-            {/* Декоративная плашка */}
-            <div className="bg-brand-red rounded-2xl p-8 lg:p-10 text-white">
-              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-3">Локация</p>
-              <p className="font-serif text-2xl lg:text-3xl font-bold mb-2">Санкт-Петербург</p>
-              <p className="text-white/60 text-base lg:text-lg font-light">ул. Матроса Железняка, 57</p>
-            </div>
-          </div>
+          <PromosCarousel />
         </motion.div>
 
       </div>
