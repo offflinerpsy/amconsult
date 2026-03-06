@@ -181,7 +181,7 @@ const Hero: React.FC = () => {
               Центр правовых решений Макеевой А.А.
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif text-text-main leading-[1.1] tracking-tight">
-              Ваш успех <br className="hidden md:block"/> по праву
+              Ваш успех — <br className="hidden md:block"/> по праву
             </h1>
             <p className="text-xl md:text-2xl lg:text-[1.7rem] text-text-secondary font-light max-w-xl leading-relaxed">
               Юридическое сопровождение бизнеса и частных лиц в Санкт-Петербурге.
