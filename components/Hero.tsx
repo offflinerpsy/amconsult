@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative w-full bg-background-light pt-48 pb-16 md:pb-32 lg:pb-48 px-6 md:px-10 lg:px-40 overflow-hidden min-h-screen flex items-center">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16 items-start relative z-10 w-full">
 
         {/* Text Content */}
         <motion.div
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif text-text-main leading-[1.1] tracking-tight">
               Ваш успех <br className="hidden md:block"/> по праву
             </h1>
-            <p className="text-lg md:text-2xl text-text-secondary font-light max-w-xl leading-relaxed">
+            <p className="text-xl md:text-2xl lg:text-[1.7rem] text-text-secondary font-light max-w-xl leading-relaxed">
               Юридическое сопровождение бизнеса и частных лиц в Санкт-Петербурге.
             </p>
           </div>
@@ -109,40 +109,35 @@ const Hero: React.FC = () => {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Специальные предложения</span>
             </div>
 
-            {/* Акция 1 */}
-            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
-              <div className="flex items-start gap-5">
-                <div className="mt-1 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <span className="text-primary font-serif font-bold text-lg">1</span>
+            {/* Акции — компактная сетка 2 колонки */}
+            <div className="grid grid-cols-2 gap-3">
+              {/* Акция 1 */}
+              <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group aspect-square flex flex-col justify-center">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-3">
+                  <span className="text-primary font-serif font-bold text-base">1</span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg text-text-main tracking-tight mb-2">Бесплатная консультация</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed font-light">
-                    Первичный анализ ситуации. Честный прогноз исхода дела и стратегия будущей защиты.
-                  </p>
-                </div>
+                <h3 className="font-bold text-base text-text-main tracking-tight mb-1.5 leading-tight">Бесплатная консультация</h3>
+                <p className="text-text-secondary text-xs leading-relaxed font-light">
+                  Первичный анализ ситуации и честный прогноз исхода дела.
+                </p>
               </div>
-            </div>
 
-            {/* Акция 2 */}
-            <div className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
-              <div className="flex items-start gap-5">
-                <div className="mt-1 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <span className="text-primary font-serif font-bold text-lg">2</span>
+              {/* Акция 2 */}
+              <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group aspect-square flex flex-col justify-center">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-3">
+                  <span className="text-primary font-serif font-bold text-base">2</span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg text-text-main tracking-tight mb-2">Аудит договора для бизнеса</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed font-light">
-                    Бесплатный разбор шаблона. Выявим скрытые риски и «подводные камни».
-                  </p>
-                </div>
+                <h3 className="font-bold text-base text-text-main tracking-tight mb-1.5 leading-tight">Аудит договора</h3>
+                <p className="text-text-secondary text-xs leading-relaxed font-light">
+                  Бесплатный разбор шаблона. Выявим скрытые риски.
+                </p>
               </div>
             </div>
 
             {/* Декоративная плашка */}
-            <div className="bg-brand-red rounded-2xl p-8 text-white">
-              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-3">Локация</p>
-              <p className="font-serif text-2xl font-bold mb-2">Санкт-Петербург</p>
+            <div className="bg-brand-red rounded-2xl p-6 text-white">
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-2">Локация</p>
+              <p className="font-serif text-xl font-bold mb-1">Санкт-Петербург</p>
               <p className="text-white/60 text-sm font-light">ул. Матроса Железняка, 57</p>
             </div>
           </div>

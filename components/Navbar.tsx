@@ -15,7 +15,7 @@ const LogoAM: React.FC<{ scrolled: boolean }> = ({ scrolled }) => {
       className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto transition-all duration-300" 
     >
       <g>
-        <text x="275" y="397" textAnchor="middle" fill={color} fontFamily="'Montserrat', 'Manrope', sans-serif" fontSize="14" fontWeight="500" letterSpacing="3">КОНСАЛТИНГ</text>
+        <text x="275" y="397" textAnchor="middle" fill={color} fontFamily="'Montserrat', 'Manrope', sans-serif" fontSize="14" fontWeight="600" letterSpacing="3">АМ КОНСАЛТИНГ</text>
         <rect x="219.652" y="402.675" fill={color} width="110.66" height="0.961"/>
         <g>
           <path fill={color} d="M224.542,412.083c0.22,0.252,0.33,0.58,0.33,0.984c0,0.529-0.188,0.932-0.561,1.215

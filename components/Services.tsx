@@ -64,7 +64,7 @@ const Services: React.FC = () => {
             <p className="font-serif text-2xl md:text-3xl font-bold mb-4 leading-snug">
               Это лишь ключевые направления нашей работы
             </p>
-            <p className="text-white/70 text-lg font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
               Если вы не нашли свою ситуацию в списке — просто опишите её нам. Мы специализируемся на комплексных правовых решениях и обязательно найдём способ вам помочь.
             </p>
           </motion.div>
@@ -86,7 +86,7 @@ const Services: React.FC = () => {
             </div>
             <div>
               <h3 className="font-serif text-2xl md:text-3xl font-bold text-text-main mb-3 tracking-tight">Конфиденциальность</h3>
-              <p className="text-text-secondary text-lg font-light leading-relaxed max-w-2xl">
+              <p className="text-text-secondary text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                 Абсолютная конфиденциальность. Ваши секреты находятся под защитой закона и нашей профессиональной этики.
               </p>
             </div>
@@ -114,10 +114,10 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ title, desc, icon }) => (
       </div>
       <div className="flex-1">
         <div className="flex justify-between items-start mb-3">
-          <h4 className="text-xl font-bold text-text-main dark:text-white tracking-tight font-display leading-tight pr-4">{title}</h4>
+          <h4 className="text-xl md:text-2xl font-bold text-text-main dark:text-white tracking-tight font-display leading-tight pr-4">{title}</h4>
           <ArrowUpRight size={20} className="text-gray-300 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 shrink-0 mt-1" />
         </div>
-        <p className="text-gray-500 dark:text-gray-400 text-base leading-relaxed font-light">{desc}</p>
+        <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg leading-relaxed font-light">{desc}</p>
       </div>
     </div>
   </motion.div>

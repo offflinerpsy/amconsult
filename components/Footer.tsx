@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 </g>
               </svg>
             </div>
-            <p className="mt-2 text-white/80 text-[10px] font-bold uppercase tracking-[0.3em]" style={{fontFamily: "'Montserrat', 'Manrope', sans-serif"}}>Консалтинг</p>
+            <p className="mt-2 text-white/80 text-[10px] font-bold uppercase tracking-[0.3em]" style={{fontFamily: "'Montserrat', 'Manrope', sans-serif"}}>АМ Консалтинг</p>
             <p className="text-white/40 text-[8px] uppercase tracking-[0.2em] mt-0.5" style={{fontFamily: "'Montserrat', 'Manrope', sans-serif"}}>Ваш успех — по праву</p>
             <p className="text-gray-400 text-sm leading-relaxed font-light mt-6">
               Высокие стандарты юридических услуг. Мы защищаем то, что вам дорого, используя многолетний опыт и безупречное знание закона.
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-600 uppercase tracking-widest font-bold">
           <div className="flex flex-col gap-1.5 items-center md:items-start">
-            <p>© {new Date().getFullYear()} A.M. Consult. Все права защищены.</p>
+            <p>© {new Date().getFullYear()} А.М.Консалтинг. Все права защищены.</p>
             <p className="normal-case tracking-normal font-normal text-gray-700 text-[9px]">
               ОГРНИП 320784700152941 · ИНН 780244494820
             </p>

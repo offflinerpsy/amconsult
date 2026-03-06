@@ -8,7 +8,7 @@ const PHONE_DISPLAY = '+7 981 806 2383';
 const EMAIL = 'info@amconsultspb.ru';
 const TG_LINK = 'https://t.me/MakeevaAlina88';
 // Координаты офиса: ул. Матроса Железняка, 57, СПб
-const YANDEX_MAPS_LINK = 'https://yandex.ru/maps/?pt=30.312154,59.996165&z=16&l=map';
+const YANDEX_MAPS_LINK = 'https://yandex.ru/maps/?pt=30.316254,60.000290&z=16&l=map';
 
 const Contact: React.FC = () => {
   return (
@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-1">Открыть на карте</p>
-                  <p className="font-serif text-xl font-bold text-text-main">A.M. Consult</p>
+                  <p className="font-serif text-xl font-bold text-text-main">А.М.Консалтинг</p>
                 </div>
               </div>
               <p className="text-text-secondary text-sm font-light leading-relaxed">
@@ -110,7 +110,7 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ icon, label, value, h
       </div>
       <div className="flex flex-col justify-center">
         <p className="text-[8px] md:text-[9px] font-black text-gray-400 uppercase tracking-[0.3em] mb-1">{label}</p>
-        <p className="text-base md:text-xl lg:text-2xl text-text-main dark:text-white font-serif tracking-tight leading-tight group-hover:text-primary transition-colors">{value}</p>
+        <p className="text-lg md:text-xl lg:text-2xl text-text-main dark:text-white font-serif tracking-tight leading-tight group-hover:text-primary transition-colors">{value}</p>
       </div>
     </div>
   );

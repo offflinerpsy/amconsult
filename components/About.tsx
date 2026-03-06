@@ -138,7 +138,7 @@ const About: React.FC = () => {
               <span className="absolute left-0 top-0 text-primary opacity-20 text-6xl font-serif">“</span>
             </div>
 
-            <div className="space-y-8 text-text-secondary leading-relaxed text-lg font-light max-w-2xl">
+            <div className="space-y-8 text-text-secondary leading-relaxed text-lg md:text-xl font-light max-w-2xl">
               <p>Как ведущий юрист с многолетним стажем, я убеждена: в праве не бывает мелочей. Центр специализируется на защите сложных активов и разрешении нестандартных корпоративных споров.</p>
               <p>Мы предлагаем высокий уровень экспертизы, сохраняя при этом персональную вовлеченность и абсолютную конфиденциальность.</p>
             </div>
