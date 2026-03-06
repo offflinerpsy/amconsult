@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative w-full bg-background-light pt-48 pb-16 md:pb-32 lg:pb-48 px-6 md:px-10 lg:px-40 overflow-hidden min-h-screen flex items-center">
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16 items-start relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 lg:gap-16 items-stretch relative z-10 w-full">
 
         {/* Text Content */}
         <motion.div
@@ -124,45 +124,45 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="relative order-1 lg:order-2 w-full"
+          className="relative order-1 lg:order-2 w-full flex flex-col"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5 h-full">
             {/* Заголовок блока */}
-            <div className="flex items-center gap-4 mb-2">
+            <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-primary"></span>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Специальные предложения</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary">Специальные предложения</span>
             </div>
 
-            {/* Акции — компактная сетка 2 колонки */}
-            <div className="grid grid-cols-2 gap-3">
+            {/* Акции — 2 колонки, растянутые */}
+            <div className="grid grid-cols-2 gap-4 flex-1">
               {/* Акция 1 */}
-              <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group aspect-square flex flex-col justify-center">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-3">
-                  <span className="text-primary font-serif font-bold text-base">1</span>
+              <div className="bg-white border border-gray-100 rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group flex flex-col justify-center">
+                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-4">
+                  <span className="text-primary font-serif font-bold text-lg">1</span>
                 </div>
-                <h3 className="font-bold text-base text-text-main tracking-tight mb-1.5 leading-tight">Бесплатная консультация</h3>
-                <p className="text-text-secondary text-xs leading-relaxed font-light">
+                <h3 className="font-bold text-lg lg:text-xl text-text-main tracking-tight mb-2 leading-tight">Бесплатная консультация</h3>
+                <p className="text-text-secondary text-sm lg:text-base leading-relaxed font-light">
                   Первичный анализ ситуации и честный прогноз исхода дела.
                 </p>
               </div>
 
               {/* Акция 2 */}
-              <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group aspect-square flex flex-col justify-center">
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-3">
-                  <span className="text-primary font-serif font-bold text-base">2</span>
+              <div className="bg-white border border-gray-100 rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group flex flex-col justify-center">
+                <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors mb-4">
+                  <span className="text-primary font-serif font-bold text-lg">2</span>
                 </div>
-                <h3 className="font-bold text-base text-text-main tracking-tight mb-1.5 leading-tight">Аудит договора</h3>
-                <p className="text-text-secondary text-xs leading-relaxed font-light">
-                  Бесплатный разбор шаблона. Выявим скрытые риски.
+                <h3 className="font-bold text-lg lg:text-xl text-text-main tracking-tight mb-2 leading-tight">Аудит договора для бизнеса</h3>
+                <p className="text-text-secondary text-sm lg:text-base leading-relaxed font-light">
+                  Бесплатный разбор шаблона. Выявим скрытые риски и «подводные камни».
                 </p>
               </div>
             </div>
 
             {/* Декоративная плашка */}
-            <div className="bg-brand-red rounded-2xl p-6 text-white">
-              <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-2">Локация</p>
-              <p className="font-serif text-xl font-bold mb-1">Санкт-Петербург</p>
-              <p className="text-white/60 text-sm font-light">ул. Матроса Железняка, 57</p>
+            <div className="bg-brand-red rounded-2xl p-8 lg:p-10 text-white">
+              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-3">Локация</p>
+              <p className="font-serif text-2xl lg:text-3xl font-bold mb-2">Санкт-Петербург</p>
+              <p className="text-white/60 text-base lg:text-lg font-light">ул. Матроса Железняка, 57</p>
             </div>
           </div>
         </motion.div>
